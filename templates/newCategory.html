@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+<form action="#" method='post'>
+	<label for="name">New Category Name</label>
+	<input type="text" name="new-name" maxlength=20>
+	<button type="submit">Submit</button>
+</form>
+{% endblock %}

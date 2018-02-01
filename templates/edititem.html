@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+<form action='#' method = "post">
+	<label for="title"> Title </label><br>
+	<input type ="text" maxlength = "20" class = "edit-text" name = "title" value = "{{item.title}}"><br><br>
+	
+	<label for="description">Description</label><br>
+	<input type = "text" maxlength = "250" name = "description" value = "{{item.description}}"><br><br>
+	<lable for="category"> Decor Category</label><br>
+	<select name = "decor">
+		<option value ={{decor.name}}>{{decor.name}}</option>
+	</select><br><br>
+	<button type = "submit"> Save </button> &nbsp;
+	<a href = "{{url_for('showDecor')}}">
+		<button type="button"> Cancel </button>
+	</a>
+
+</form>
+{% endblock %}	

@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div>
+<br>
+	<a href = "{{url_for('showDecor')}}">
+		<button id="home"> Home </button>
+	</a>
+{% if abc %}
+	<a id="logout" href = "{{url_for('logout')}}">
+		<button id="logout" name="b2">Logout</button>
+	</a>
+{% endif %}
+
+<div class="content">
+<div class="category">
+<p class="category-heading">Categories</p>
+{% for i in alldecor %}
+	<a href = "{{url_for('getItems', cat_name = i.name)}}">
+		<h3>{{i.name}}</h3>
+	</a>
+{% endfor %}
+</div>
+
+<div class="items">
+<p class="recent">Items</p>
+{% for a in item %}
+	<a href = "{{url_for('itemDescription', cat_name = dec.name, item_name = a.title)}}">
+		<h3>{{a.title}}</h3>
+	</a>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}
+

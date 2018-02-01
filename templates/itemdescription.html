@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+{% if abc %}
+	<a id="logout" href = "{{url_for('logout')}}">
+		<button id="logout" name="b2">Logout</button>
+	</a>
+{% endif %}
+<h3 id="description">ITEM DESCRIPTION</h3>
+
+<h3 id="item-title">{{item.title}}</h3>
+<h4 id="item-description">{{item.description}}</h4>
+
+<a href = "{{url_for('editItem', item_name = item.title)}}">Edit</a> &nbsp; &nbsp
+
+<a href = "{{url_for('deleteItem', item_name = item.title)}}"> Delete </a>
+
+
+{% endblock %}

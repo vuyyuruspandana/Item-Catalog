@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+<form action="#" method = 'post'>
+	<h4> Are you sure you want to delete {{item.name}}?</h4>
+	<button type="submit" name='delete'> Delete </button><br>
+</form>
+<br>
+<a href = "{{url_for('showDecor')}}">
+		<button> Cancel </button>
+	</a>
+{% endblock %}

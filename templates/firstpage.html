@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+
+{% if abc %}
+	<a id="new-category" href = "{{url_for('addCategory')}}">
+		<h7> ADD NEW CATEGORY </h7>
+	</a>
+{% endif %}
+
+
+{% if not abc %}
+	<a href= "{{url_for('login')}}">
+ 		<button id="login" name="b1">Login</button>
+	</a>
+{% endif %}
+
+{% if abc %}
+	<a id="logout" href = "{{url_for('logout')}}">
+		<button id="logout" name="b2">Logout</button>
+	</a>
+{% endif %}	
+
+{% if user %}
+	<div class="banner"> Welcome {{g.user.username}}</div>
+{% endif %}
+
+<div class="content">
+<div class="category">
+	<p class="category-heading"> Categories </p>
+ 	{% for i in decors %}
+		<a href = "{{url_for('getItems', cat_name = i.name)}}">
+			<h3>{{i.name}}</h3>
+		</a>
+		{% if abc %}
+			<a href = "{{url_for('addItem', decor_name = i.name)}}">
+				<p id="add-item">ADD ITEM</p>
+			</a>
+		{% endif %}
+	
+ 	{% endfor %}
+</div>
+
+<div class="items">
+	<p class="recent"> Recently added Items </p>
+ 	{%for i in recent %}
+		<h3 id="list-items">{{i.title}}</h3>
+ 	{% endfor %}
+</div>
+</div>
+
+{% endblock %}

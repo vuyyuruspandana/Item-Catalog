@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+
+<form action='#' method="post">
+	<label for="name">Name:</label>
+	<input type="text" name="name"><br><br>
+	<label for="email">Email:</label>
+	<input type="text" name="email"><br><br>
+	<label for="password">Password</label>
+	<input type="password" name="password"><br><br>
+	<button type="submit">Create Account</button>
+</form>
+
+{% endblock %}

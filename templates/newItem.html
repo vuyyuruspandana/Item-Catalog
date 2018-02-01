@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="top">
+	<img class="logo-picture" src="/static/logo.png">
+	<div class="catalog"></div>
+</div><br>
+<form action='#' method = "post">
+	<label for="title"> Item Name </label><br>
+	<input type = "text" maxlegth = "20" name = "new-title-name" ><br><br>
+	<label for="description"> Item Description </label><br>
+	<input type = "text" maxlength="50" name = "new-item-description"><br><br>
+	<button type = "submit"> Add Item </button>
+</form>
+{% endblock %}
